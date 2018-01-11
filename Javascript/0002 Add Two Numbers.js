@@ -68,7 +68,6 @@ const addTwoNumbers = function(l1, l2) {
       lastNode = currentNew;
       currentNew = currentNew.next;
       currentL1 = currentL1.next;
-      // carryFlag = false;
       continue;
     }
     let val = currentL1.val + currentL2.val + (carryFlag ? 1 : 0)
@@ -98,12 +97,3 @@ const addTwoNumbers = function(l1, l2) {
   if (!currentNew.val) lastNode.next = null;
   return output
 };
-
-const list1 = new ListNode(9);
-list1.next = new ListNode(9);
-// list1.next.next = new ListNode(2);
-const list2 = new ListNode(9);
-// list2.next = new ListNode(9);
-// list2.next.next = new ListNode(4);
-
-console.log(addTwoNumbers(list1, list2))
