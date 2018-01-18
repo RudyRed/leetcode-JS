@@ -34,7 +34,7 @@ const reverseBetween = function(head, m, n) {
   }
 
   prev = null;
-  let nNode = curr;
+  let nthNode = curr;
 
   while (count <= n) {
     let placeholder = curr.next;
@@ -46,7 +46,7 @@ const reverseBetween = function(head, m, n) {
   if (start) {
     start.next = prev;
   }
-  nNode.next = curr;
+  nthNode.next = curr;
 
   return start ? head : prev;
 };
