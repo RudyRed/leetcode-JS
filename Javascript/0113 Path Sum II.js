@@ -16,29 +16,25 @@
 //    [5,8,4,5]
 // ]
 
-const pathSum = function(root, sum, currentSet = [[]]) {
+const pathSum = function(root, sum, currentSet = []) {
   if (!root) return [];
 
   if (!root.left && !root.right) {
     if (sum - root.val) return [];
-    return currentSet.map(x => x.concat(root.val));
+    return [currentSet.concat(root.val)];
   }
 
   let output = [];
   if (root.right) {
-    let right = pathSum(root.right, sum - root.val, currentSet.map(x => x.concat(root.val)));
-    if (right.length) {
-      for (let set of right) output.push(set);
-    }
+    let right = pathSum(root.right, sum - root.val, currentSet.concat(root.val));
+    for (let set of right) output.push(set);
   }
 
   if (root.left) {
-    let left = pathSum(root.left, sum - root.val, currentSet.map(x => x.concat(root.val)));
-    if (left.length) {
-      for (let set of left) output.push(set);
-    }
+    let left = pathSum(root.left, sum - root.val, currentSet.concat(root.val));
+    for (let set of left) output.push(set);
   }
-  return output
+  return output;
 };
 
 // let tree = {
