@@ -22,40 +22,30 @@
  * }
  */
 
-const levelOrder = function(root, depth = 1) {
+const levelOrder = function(root, depth = 0) {
   if (!root) return [];
-  let obj = {};
-  obj[depth] = [root.val];
+  let output = [];
+  output[depth++] = [root.val];
 
   if (root.left) {
-    let left = levelOrder(root.left, depth + 1);
-    for (let key in left) {
-      obj[key] = left[key];
+    let left = levelOrder(root.left, depth);
+    for (let i = depth; i < left.length; i++) {
+      output[i] = left[i];
     }
   }
 
   if (root.right) {
-    let right = levelOrder(root.right, depth + 1);
-    for (let key in right) {
-      if (obj[key]) {
-        obj[key] = obj[key].concat(right[key]);
+    let right = levelOrder(root.right, depth);
+    for (let i = depth; i < right.length; i++) {
+      if (output[i]) {
+        output[i] = output[i].concat(right[i]);
       } else {
-      obj[key] = right[key];
+      output[i] = right[i];
       }
     }
   }
 
-  if (depth > 1) return obj;
-
-  let outputArr = [];
-  let level = 1;
-
-  while (obj[level]) {
-    outputArr.push(obj[level]);
-    level++;
-  }
-
-  return outputArr;
+  return output;
 };
 
 // function TreeNode(val) {
