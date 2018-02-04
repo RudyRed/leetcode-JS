@@ -17,10 +17,12 @@
 // Bonus points if you could solve it both recursively and iteratively.
 
 
-const isSymmetric = function (l, r = l) {
+const check = function (l, r = l) {
   if (!l && !r) return true;
 
   if (!l || !r || l.val !== r.val) return false;
 
-  return isSymmetric(l.left, r.right) && isSymmetric(l.right, r.left);
+  return check(l.left, r.right) && check(l.right, r.left);
 };
+
+const isSymmetric = (root) => root ? check(root.left, root.right) : true;
