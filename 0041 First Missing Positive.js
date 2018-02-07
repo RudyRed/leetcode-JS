@@ -8,12 +8,14 @@
 
 const firstMissingPositive = function(nums) {
   let len = nums.length;
+  
   for (let i = 0; i < len; i++) {
     let num = nums.pop();
     if (num > 0) nums[num * -1] = 1;
   }
+
   for (let i = 1; i <= len + 1; i++) {
-    if (!nums[i * -1]) return i
+    if (!nums[i * -1]) return i;
   }
 };
 
