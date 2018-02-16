@@ -11,18 +11,13 @@
 const permuteUnique = function(nums, permute = []) {
   if (!nums.length) return [permute];
   const numberUsed = {};
-  const output = [];
+  let output = [];
 
   for (let i = 0; i < nums.length; i++) {
     let num = nums.shift();
 
     if (!numberUsed[num]) {
-      const results = permuteUnique(nums, permute.concat(num));
-
-      for (let completedPermutation of results) {
-        output.push(completedPermutation);
-      }
-
+      output = output.concat(permuteUnique(nums, permute.concat(num)));
     }
 
     numberUsed[num] = true;
