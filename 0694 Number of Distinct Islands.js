@@ -63,7 +63,7 @@ const numDistinctIslands = function(grid) {
       }
     }
   }
-console.log(mapObj)
+
   return Object.keys(mapObj).length;
 };
 
