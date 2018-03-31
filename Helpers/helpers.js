@@ -1,4 +1,4 @@
-function TreeNode(val) {
+const TreeNode = function (val) {
   this.val = val;
   this.right = this.left = null;
 }
@@ -37,6 +37,24 @@ const makeBT = function (arr) {
   return tree;
 };
 
+const ListNode = function (val) {
+  this.val = val;
+  this.next = null;
+}
+
+const singlyLL = function (nums) {
+  const head = new ListNode(0);
+  let curr = head;
+
+  for (let num of nums) {
+    curr.next = new ListNode(num);
+    curr = curr.next;
+  }
+
+  return head.next;
+};
+
 module.exports = {
   makeBT,
+  singlyLL,
 }
