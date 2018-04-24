@@ -57,4 +57,6 @@ const singlyLL = function (nums) {
 module.exports = {
   makeBT,
   singlyLL,
+  ListNode,
+  TreeNode,
 }
