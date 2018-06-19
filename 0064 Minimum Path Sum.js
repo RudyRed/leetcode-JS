@@ -34,7 +34,7 @@ const minPathSum = function(grid) {
     }
   }
 
-  return grid[grid.length - 1][grid[grid.length - 1].length - 1];
+  return grid.pop().pop();
 };
 
 console.log(minPathSum([
