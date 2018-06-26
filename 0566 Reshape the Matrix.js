@@ -45,12 +45,11 @@ const matrixReshape = function(nums, r, c) {
 
   if (nums.length * oldCol !== r * c) return nums;
 
-  let numOfEl = 0;
-  const matrix = new Array(r).fill(0).map(() => new Array(c));
+  let numOfEl = -1;
+  const matrix = new Array(r).fill(0).map(() => []);
 
-  while (numOfEl < r * c) {
-    matrix[Math.floor(numOfEl / c)][numOfEl % c] = nums[Math.floor(numOfEl / oldCol)][numOfEl % oldCol];
-    numOfEl++;
+  while (++numOfEl < r * c) {
+    matrix[Math.floor(numOfEl / c)].push(nums[Math.floor(numOfEl / oldCol)][numOfEl % oldCol]);
   }
 
   return matrix;
