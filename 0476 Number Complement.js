@@ -15,6 +15,6 @@
 // Explanation: The binary representation of 1 is 1 (no leading zero bits), and
 // its complement is 0. So you need to output 0.
 
-const findComplement = n => parseInt(n.toString(2).split``.map(x => x == 1 ? '0' : '1').join``, 2)
+const findComplement = n => parseInt(n.toString(2).split``.map(x => x == 1 ? '0' : '1').join``, 2);
 
 console.log(findComplement(5))
