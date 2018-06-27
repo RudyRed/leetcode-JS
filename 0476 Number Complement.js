@@ -17,4 +17,4 @@
 
 const findComplement = n => parseInt(n.toString(2).split``.map(x => x == 1 ? '0' : '1').join``, 2);
 
-console.log(findComplement(5))
+console.log(findComplement(5));
