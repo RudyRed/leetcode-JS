@@ -41,13 +41,12 @@
 
 const isToeplitzMatrix = function(matrix) {
 
-
   for (let i = 0; i < matrix[0].length; i++) {
     let r = 0;
     let c = i;
     const num = matrix[r][c];
 
-    while (matrix[++r] != undefined && matrix[r][++c] != undefined) {
+    while (matrix[++r] !== undefined && matrix[r][++c] !== undefined) {
       if (num !== matrix[r][c]) return false;
     }
   }
@@ -57,7 +56,7 @@ const isToeplitzMatrix = function(matrix) {
     let c = 0;
     const num = matrix[r][c];
 
-    while (matrix[++r] != undefined && matrix[r][++c] != undefined) {
+    while (matrix[++r] !== undefined && matrix[r][++c] !== undefined) {
       if (num !== matrix[r][c]) return false;
     }
   }
