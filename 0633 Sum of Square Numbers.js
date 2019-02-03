@@ -16,14 +16,14 @@ const judgeSquareSum = c => {
 
   for (let a = 0; a <= Math.floor(Math.sqrt(c)); a++) {
     let remaining = c - a ** 2;
-console.log(a)
+
     if (Math.floor(Math.sqrt(remaining)) === Math.sqrt(remaining)) return true;
   }
 
   return false;
 };
 
-console.log(judgeSquareSum(8), '5 sb true');
-// console.log(judgeSquareSum(3), '3 sb false');
-// console.log(judgeSquareSum(65), '65 sb true');
-// console.log(judgeSquareSum(51), '51 sb false');
+console.log(judgeSquareSum(8), '8 sb true');
+console.log(judgeSquareSum(3), '3 sb false');
+console.log(judgeSquareSum(65), '65 sb true');
+console.log(judgeSquareSum(51), '51 sb false');
