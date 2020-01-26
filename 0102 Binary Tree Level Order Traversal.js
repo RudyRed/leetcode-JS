@@ -22,42 +22,21 @@
  * }
  */
 
-const levelOrder = function(root, depth = 0) {
-  if (!root) return [];
-  let output = [];
-  output[depth++] = [root.val];
+const { makeBT } = require('./Helpers/helpers')
 
-  if (root.left) {
-    let left = levelOrder(root.left, depth);
-    for (let i = depth; i < left.length; i++) {
-      output[i] = left[i];
-    }
+const levelOrder = (root, arr = [], level = 0) => {
+  if (!root) return []
+
+  if (arr[level] === undefined) {
+    arr[level] = []
   }
+  arr[level].push(root.val)
 
-  if (root.right) {
-    let right = levelOrder(root.right, depth);
-    for (let i = depth; i < right.length; i++) {
-      if (output[i]) {
-        output[i] = output[i].concat(right[i]);
-      } else {
-      output[i] = right[i];
-      }
-    }
-  }
+  levelOrder(root.left, arr, ++level)
+  levelOrder(root.right, arr, level)
 
-  return output;
-};
 
-// function TreeNode(val) {
-//   this.val = val;
-//   this.left = null;
-//   this.right = null;
-// };
-//
-// let tree = new TreeNode(3);
-// tree.left = new TreeNode(9);
-// tree.right = new TreeNode(20);
-// tree.right.left = new TreeNode(15);
-// tree.right.right = new TreeNode(7);
-//
-// console.log(levelOrder(tree));
+  return arr
+}
+
+console.log(levelOrder(makeBT([3,9,20,null,null,15,7])))
