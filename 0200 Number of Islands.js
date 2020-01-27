@@ -19,27 +19,29 @@
 // 00011
 // Answer: 3
 
-const numIslands = function (grid) {
-  let islandCount = 0;
+const sweepIsland = (grid, r, c) => {
+  if (grid[r] === undefined || grid[r][c] === undefined || grid[r][c] === '0') return
+  grid[r][c] = '0'
 
-  const sweepWholeIsland = (r, c) => {
-    grid[r][c] = 0;
-    if (grid[r + 1] && grid[r + 1][c] == 1) sweepWholeIsland(r + 1, c); // down
-    if (grid[r - 1] && grid[r - 1][c] == 1) sweepWholeIsland(r - 1, c); // up
-    if (grid[r][c + 1] == 1) sweepWholeIsland(r, c + 1); // right
-    if (grid[r][c - 1] == 1) sweepWholeIsland(r, c - 1); // left
-  };
+  sweepIsland(grid, r - 1, c)
+  sweepIsland(grid, r + 1, c)
+  sweepIsland(grid, r, c - 1)
+  sweepIsland(grid, r, c + 1)
+}
+
+const numIslands = grid => {
+  let numOfIslands = 0
 
   for (let r = 0; r < grid.length; r++) {
     for (let c = 0; c < grid[r].length; c++) {
-      if (grid[r][c] == 1) {
-        islandCount++;
-        sweepWholeIsland(r, c);
-      }
+      if (grid[r][c] === '0') continue
+      numOfIslands++
+      sweepIsland(grid, r, c)
     }
   }
 
-  return islandCount;
-};
+  return numOfIslands
+}
 
-// console.log(numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]))
+console.log(numIslands([["1","1","1","1","0"],["1","1","0","1","0"],["1","1","0","0","0"],["0","0","0","0","0"]]))
+console.log(numIslands([["1","1","0","0","0"],["1","1","0","0","0"],["0","0","1","0","0"],["0","0","0","1","1"]]))
