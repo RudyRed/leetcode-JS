@@ -20,7 +20,7 @@
  * @return {ListNode}
  */
 
-const { singlyLL } = require('./Helpers/helpers')
+const { singlyLL } = require('../Helpers/helpers')
 
 const partition = (head, x) => {
   const less = []

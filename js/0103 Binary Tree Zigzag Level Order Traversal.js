@@ -14,7 +14,7 @@
 //   [15,7]
 // ]
 
-const { makeBT } = require('./Helpers/helpers')
+const { makeBT } = require('../Helpers/helpers')
 
 const zigzagLevelOrder = (root, arr = [], level = 0) => {
   if (!root) return []

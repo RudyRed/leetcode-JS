@@ -19,7 +19,7 @@
  * @return {ListNode}
  */
 
-const { singlyLL, ListNode } = require('./Helpers/helpers.js');
+const { singlyLL, ListNode } = require('../Helpers/helpers.js');
 
 const swapPairs = function(head) {
 

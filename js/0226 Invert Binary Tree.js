@@ -10,11 +10,11 @@
 //   7     2
 //  / \   / \
 // 9   6 3   1
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 const invertTree = function(root) {
   if (!root) return null;
-  
+
   const placeholder = root.left;
   root.left = invertTree(root.right);
   root.right = invertTree(placeholder);

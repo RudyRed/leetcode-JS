@@ -17,7 +17,7 @@
  *     this.left = this.right = null;
  * }
  */
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 
 const preorderTraversal = function(root) {

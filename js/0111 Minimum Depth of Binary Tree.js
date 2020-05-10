@@ -15,7 +15,7 @@
 //    15   7
 // return its minimum depth = 2.
 
-const { makeBT } = require('./Helpers/helpers')
+const { makeBT } = require('../Helpers/helpers')
 
 const minDepth = (root, level = 1) => {
   if (!root) return 0

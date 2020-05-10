@@ -22,7 +22,7 @@
 *     this.left = this.right = null;
 * }
 */
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 
 const isValidBST = function(root, lessThan, greaterThan) {

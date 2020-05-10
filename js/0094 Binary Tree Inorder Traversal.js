@@ -8,7 +8,7 @@
 //     /
 //    3
 // return [1,3,2].
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 
 const inorderTraversal = function (root) {

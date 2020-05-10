@@ -22,7 +22,7 @@
  * }
  */
 
-const { makeBT } = require('./Helpers/helpers')
+const { makeBT } = require('../Helpers/helpers')
 
 const levelOrder = (root, arr = [], level = 0) => {
   if (!root) return []

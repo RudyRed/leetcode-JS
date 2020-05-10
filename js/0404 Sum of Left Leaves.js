@@ -10,7 +10,7 @@
 
 // There are two left leaves in the binary tree, with values 9 and 15 respectively. Return 24.
 
-const { makeBT } = require('./Helpers/helpers')
+const { makeBT } = require('../Helpers/helpers')
 
 
 const sumOfLeftLeaves = (root, isLeft) => {

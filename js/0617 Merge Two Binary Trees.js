@@ -20,7 +20,7 @@
 // 	  / \   \
 // 	 5   4   7
 // Note: The merging process must start from the root nodes of both trees.
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 const mergeTrees = function(t1, t2) {
   if (t1 === null) return t2;

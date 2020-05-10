@@ -31,7 +31,7 @@
 // Output: false
 
 
-const { makeBT } = require('./Helpers/helpers.js');
+const { makeBT } = require('../Helpers/helpers.js');
 
 const isSameTree = function(p, q) {
   if (p == null) return q == null;
