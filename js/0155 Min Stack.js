@@ -60,11 +60,11 @@ MinStack.prototype.getMin = function() {
   return this._localMin.length ? this._localMin[this._localMin.length - 1] : null;
 };
 
-MinStack minStack = new MinStack();
+const minStack = new MinStack();
 minStack.push(-2);
 minStack.push(0);
 minStack.push(-3);
-minStack.getMin();   --> Returns -3.
+minStack.getMin();  // --> Returns -3.
 minStack.pop();
-minStack.top();      --> Returns 0.
-minStack.getMin();   --> Returns -2.
+minStack.top(); //     --> Returns 0.
+minStack.getMin(); //  --> Returns -2.
